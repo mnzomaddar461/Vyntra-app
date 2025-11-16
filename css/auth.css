@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  background: #fafafa;
+  font-family: Arial;
+}
+
+.auth-box {
+  width: 90%;
+  max-width: 330px;
+  margin: 60px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.btn-login {
+  background: linear-gradient(135deg, #ff2cab, #8f00ff);
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  border: none;
+  margin-top: 10px;
+}
+
+.link a {
+  color: #8f00ff;
+}

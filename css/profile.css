@@ -1,0 +1,42 @@
+body {
+  background: #fff;
+  margin: 0;
+  font-family: Arial;
+}
+
+.profile-box, .settings-box {
+  width: 90%;
+  max-width: 330px;
+  background: #fff;
+  padding: 20px;
+  margin: 60px auto;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.btn-edit, .btn-save {
+  width: 100%;
+  padding: 12px;
+  background: #050109;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.btn-logout {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(120deg, #fba5df, #da81f9);
+
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+}

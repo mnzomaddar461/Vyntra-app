@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat - Sarah Ahmed | Vyntra Messenger</title>
+  <link rel="stylesheet" href="../css/personalchat.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Chat Header -->
+  <header class="personal-header">
+    <i class="fa-solid fa-arrow-left" onclick="goBack()"></i>
+    <div class="user-info">
+      <img src="../assets/image/Mihazur Rahman (2).png" alt="User" />
+      <div>
+        <h4>Mihazur Rahman</h4>
+        <p>Online</p>
+      </div>
+    </div>
+    <i class="fa-solid fa-ellipsis-vertical"></i>
+  </header>
+
+  <!-- Chat Messages -->
+  <div class="chat-body">
+    <div class="message received">
+      <p>Hey! How are you doing today?</p>
+      <span>9:15 AM</span>
+    </div>
+
+    <div class="message sent">
+      <p>I’m good! Just working on a new project 😊</p>
+      <span>9:17 AM</span>
+    </div>
+
+    <div class="message received">
+      <p>That’s awesome! Can’t wait to see it.</p>
+      <span>9:19 AM</span>
+    </div>
+  </div>
+
+  <!-- Chat Input -->
+  <div class="chat-input">
+    <i class="fa-regular fa-face-smile"></i>
+    <input type="text" placeholder="Type a message..." />
+    <i class="fa-solid fa-paperclip"></i>
+    <button class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+  </div>
+
+  <script src="../js/personalchat.js"></script>
+</body>
+</html>
+
