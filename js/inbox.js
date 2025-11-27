@@ -1,26 +1,20 @@
+
 const sendBtn = document.getElementById('send-button');
 const chatBody = document.querySelector('.chat-body');
 const chatInput = document.getElementById('chat-input-field');
 const voiceModal = document.getElementById('voice-recording-modal');
 
 
-function goBack() {
-    window.history.back(); 
-}
-
-
 function loadChatUser() {
-
     const urlParams = new URLSearchParams(window.location.search);
     const userName = urlParams.get('name') || 'Chat User';
     const userId = urlParams.get('user') || 'default_chat_id';
 
     document.getElementById('chat-user-name').textContent = userName;
     document.getElementById('chat-user-status').textContent = 'Online';
-    
 
     localStorage.setItem('currentChatId', userId);
-    
+
     loadMessages();
 }
 
@@ -30,17 +24,11 @@ function saveMessages() {
 
     const messages = [];
     chatBody.querySelectorAll('.message').forEach(msgElement => {
-
-        const p = msgElement.querySelector('p');
-        const span = msgElement.querySelector('span');
-        
-        if (p && span) {
-            messages.push({
-                content: p.textContent,
-                time: span.textContent,
-                type: msgElement.classList.contains('sent') ? 'sent' : 'received'
-            });
-        }
+        messages.push({
+            content: msgElement.querySelector('p').textContent,
+            time: msgElement.querySelector('span').textContent,
+            type: msgElement.classList.contains('sent') ? 'sent' : 'received'
+        });
     });
     localStorage.setItem(`chatHistory_${chatId}`, JSON.stringify(messages));
 }
@@ -66,9 +54,11 @@ function loadMessages() {
 }
 
 
+
 function sendMessage() {
     const messageText = chatInput.value.trim();
     if (messageText === '') return;
+
 
     const message = document.createElement('div');
     message.classList.add('message', 'sent');
@@ -93,9 +83,10 @@ function sendMessage() {
 
 
 function handleFileInput() {
+
     const message = document.createElement('div');
     message.classList.add('message', 'sent');
-    message.innerHTML = `<p>📎 Document attached!</p><span>${getCurrentTime()}</span>`;
+    message.innerHTML = `<p>File sent: <a href="#" style="color:white; text-decoration: underline;">document.pdf</a></p><span>${getCurrentTime()}</span>`;
     chatBody.appendChild(message);
     chatBody.scrollTop = chatBody.scrollHeight;
     saveMessages();
@@ -103,23 +94,24 @@ function handleFileInput() {
 }
 
 function handleVoiceInput() {
+
     voiceModal.style.display = 'flex'; 
-    console.log("Voice recording simulated.");
+    console.log("Voice recording started.");
+
 }
 
 function stopRecording() {
+
     voiceModal.style.display = 'none'; 
-    
+
     const message = document.createElement('div');
     message.classList.add('message', 'sent');
-    message.innerHTML = `<p>🎤 Voice Note (5s)</p><span>${getCurrentTime()}</span>`;
+    message.innerHTML = `<p>🎤 Voice Note (3s)</p><span>${getCurrentTime()}</span>`;
     chatBody.appendChild(message);
     chatBody.scrollTop = chatBody.scrollHeight;
     saveMessages();
     console.log("Voice note sent.");
 }
-
-
 
 function getCurrentTime() {
     const now = new Date();
@@ -131,8 +123,9 @@ function getCurrentTime() {
     return `${hours}:${minutes} ${ampm}`;
 }
 
-
-
+function goBack() {
+    window.history.back();
+}
 
 sendBtn.addEventListener('click', sendMessage);
 chatInput.addEventListener('keypress', function(e) {

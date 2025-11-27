@@ -1,61 +1,124 @@
 body {
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  font-family: Arial;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    /* background: linear-gradient(to top, #ee51e1 0%, #0909ff 60%); */
+    background: #ced6e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.menu-container{
+    border-radius: 24px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+        /* background: linear-gradient(135deg, #FAA4E0 0%, #DB82F8 100%); */
+    background: #F5F5F5;
 }
 
 .top-bar {
-  padding: 5px;
-  background: linear-gradient(135deg, #ff2cab, #8f00ff);
-  background: #9980fa;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 1px 2px 3px #5c5c5c;
-  border-radius: 0px 0px 8px 8px;
+    padding: 5px;
+    background: #9980fa;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 1px 2px 3px #5c5c5c;
+    border-radius: 0px 0px 8px 8px;
 }
 
 h2{
     font-size: 30px;
+    text-shadow: 1px 2px 8px #000000c8;
+    margin-left: 20px 
+
 }
-.chat-list {
-  margin-top: 10px;
+
+.yourprofil{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 10px;
+    border: 3px solid #ffffff;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.name{
+    text-decoration: none;
+}
+.main-chat-list{
+    width: 90%;
+    margin-left: 25px;
+}
+.inboxlink {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
 }
 
 .chat-item {
-  display: flex;
-  padding: 8px;
-  border-bottom: 1px solid #eee;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background 0.50s ease;
 }
 
-.chat-item img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 12px;
+.chat-item:hover {
+    background: #db82f877;
+    border-radius: 10px;
 }
-body, html {
-    height: 100%;
+
+.profilpic {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.userinfo h3 {
     margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
 }
+
+.userinfo p {
+    margin: 3px 0 0;
+    font-size: 15px;
+    color: #6d6d6d;
+}
+
 
 .search-container {
     display: flex;
-    justify-content: center; /* horizontal center */
-    align-items: center;    /* vertical center */
-    height: 10%;           /* পুরো screen height নেবে */
+    justify-content: center; 
+    align-items: center;    
+    height: 10%;        
 }
 
 .search-bar {
     display: flex;
     align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 5px 10px;
-    width: 60%;
-    background-color: #f9f9f9;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    padding: 10px 20px;
+    width: 80%;
+    background-image: linear-gradient(to right, #5c00a362, #b83fec6d);
+    box-shadow: 1px 2px 16px #bfbfbf;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .search-bar img {
@@ -70,27 +133,29 @@ body, html {
     flex: 1;
     font-size: 16px;
     background: transparent;
+    color: #000000;
 }
+
+.search-container input[type="text"] {
+    padding-left: 10px; 
+}
+
+.search-container input[type="text"]::placeholder {
+    color: #cecccc; 
+    opacity: 1; 
+}
+
 /* Footer  */
-
-body {
-    margin: 0;
-    padding-bottom: 70px; /* footer height leave করার জন্য */
-    font-family: Arial, sans-serif;
-}
-
 .footer {
-    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(to right, #8e7aff, #b58aff);
+    /* background: linear-gradient(to left, #130f40, #b58aff); */
+    background: #130f40;
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 65px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
 }
 
@@ -109,7 +174,7 @@ body {
     width: 24px;
     height: 24px;
     margin-bottom: 4px;
-    filter: brightness(0) invert(1); /* icon white color */
+    filter: brightness(0) invert(1); 
 }
 
 .footer-item.active {
@@ -121,28 +186,20 @@ body {
     filter: brightness(0) invert(0.8) sepia(1) saturate(5) hue-rotate(45deg); /* golden effect */
 }
 
-/* for Top online pepole */
-
-/* 1. Stories Container (Centering Logic) */
 .stories-container {
-    padding: 15px 0; /* Vertical padding around the row */
     width: 100%;
-    /* 🌟 Centering the content horizontally */
-    display: flex;
-    justify-content: center;
-    border-bottom: 1px solid #eee; /* Light separator line */
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .profile-list {
     display: flex;
-    gap: 15px; /* Space between profiles */
-    /* Allows scrolling if profiles exceed the screen width */
-    overflow-x: auto;
-    padding: 0 10px; 
-    
-    /* Hide the scrollbar (Optional) */
-    -ms-overflow-style: none;
+    flex-wrap: nowrap;
+    gap: 15px;
+    width: max-content;
+    padding: 10px;
     scrollbar-width: none;
+    justify-self: center;
 }
 
 .profile-list::-webkit-scrollbar {
@@ -150,34 +207,80 @@ body {
 }
 
 .profile-item {
-    flex-shrink: 0; /* Prevents profiles from shrinking */
+    display: inline-flex;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
 }
 
+
 .profile-pic-wrapper {
-    /* Critical: Set to relative for absolute positioning of the status dot */
     position: relative;
-    width: 60px; /* Profile picture size */
+    width: 60px;
     height: 60px;
 }
 
 .profile-pic {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%; /* Makes the image circular */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     object-fit: cover;
 }
 
-/* 2. Green Status Dot Styling */
 .status-dot {
     position: absolute;
-    /* 🌟 Position the dot in the top-right corner */
+
     top: 0; 
     right: 0;
-    width: 12px; /* Size of the dot */
+    width: 12px; 
     height: 12px;
-    background-color: #04fb11; /* Messenger green color */
+    background-color: #04fb11; 
     border-radius: 50%;
-    /* White border for visibility against the profile image */
+
     border: 2px solid white; 
     box-sizing: content-box; 
 }
+
+/* 
+@media screen and (min-width: 768px) {
+    body {
+
+        background-color: #f0f2f5; 
+    }
+
+    .main-app-container {
+
+        width: 100%;
+        max-width: 1200px; 
+        margin: 20px auto;
+        display: flex;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        height: calc(100vh - 40px); 
+    }
+
+
+    
+    .top-bar {
+
+        border-radius: 0;
+    }
+    
+    .search-bar {
+        width: 90%; 
+        max-width: 400px;
+    }
+
+    
+    .footer {
+        display: none; 
+    } */
+    
+    /* body {
+        padding-bottom: 0; 
+    }
+}
+*/
