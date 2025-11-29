@@ -95,3 +95,18 @@ body {
   margin-bottom: 80px;
   transform: scale(1.1);
 }
+.social-medai{
+  margin-bottom: 30px;
+}
+
+.sicon{
+  transition: transform 0.3s ease;
+}
+.sicon:hover{
+  transform: scale(1.1);
+}
+.another{
+  color: #dadada;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
