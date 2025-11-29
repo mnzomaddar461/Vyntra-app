@@ -13,7 +13,7 @@ body {
 }
 
 .inbox-wrapper {
-    max-width: 480px;
+    max-width: 880px;
     margin: 0 auto;
     background: linear-gradient(to bottom, #f7a1e4, #dd84f6);
     border-radius: 15px;
